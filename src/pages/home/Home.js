@@ -81,6 +81,7 @@ function Home () {
             
             if(oldTextSearch != textSearch){
                 setListImages( result)
+                setOldTextSearch(textSearch)
             }else{
                 setListImages([...listImages, ...result])
             }
