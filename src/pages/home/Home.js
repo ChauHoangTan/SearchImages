@@ -37,14 +37,13 @@ function Filter({filterText, setFilterText, setTextSearch, setPage}) {
 }
 
 function Images({listImages}) {
-    console.log(listImages)
     return(
         <div className='containerListImages'>
             <div className='listImages'>
                 {listImages.map((img) => {
                     return (
-                        <div className='contImg' key={img.urls.raw}>
-                            <img className='img' src={img.urls.raw}/>
+                        <div className='contImg' key={img.urls.small}>
+                            <img className='img' src={img.urls.small}/>
                         </div>
                     )
                         
@@ -79,8 +78,8 @@ function Home () {
             const response = await axios.get(`https://api.unsplash.com/search/photos?page=${page}&per_page=10&query=${textSearch}&client_id=${ACCESS_KEY}`)
             const result = response.data.results  
             
-            if(oldTextSearch != textSearch){
-                setListImages( result)
+            if(oldTextSearch !== textSearch){
+                setListImages(result)
                 setOldTextSearch(textSearch)
             }else{
                 setListImages([...listImages, ...result])
@@ -88,7 +87,6 @@ function Home () {
             setIsLoading(false)
         }
        
-        
         fetch()
     }, [textSearch, page])
 
