@@ -1,0 +1,94 @@
+--root{
+    --base-color: #0097DF;
+}
+#home{
+    width: 100vw;
+    .filter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 0px;
+        .formSearch{
+            display: flex;
+            align-items: center;
+            height: 40px;
+            .inputFilter{
+                font-size: 16px;
+                height: 100%;
+                width: 400px;
+                padding-left : 10px; 
+                border: 2px solid #0097DF;
+                border-radius: 30px 0px 0px 30px;
+                appearance: none;
+                outline: none;
+            }
+            .btnSubmit{
+                margin-left: 5px;
+                height: 45px;
+                padding: 10px;
+                outline: none;
+                background-color: #0097DF;
+                border: none;
+                border-radius: 0px 5px 5px 0px ;
+                color: #d4dad9;
+            }
+        }
+        
+    }
+    .containerListImages{
+        display: flex;
+        justify-content: center;
+        
+        .listImages{
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            width: 80%;
+            
+            .contImg{
+                overflow: hidden;
+                width: 99%;
+                height: 300px;
+                margin: 2px;
+                .img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: 0.2s ease;
+                }
+            }
+
+            .contImg:hover{
+                .img:hover{
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+    
+}
+
+.containerLoading{
+    margin: 20px 0px;
+    display: flex;
+    justify-content: center;
+    .loading{
+        content: '';
+        width: 80px;
+        height: 80px;
+        border: 8px solid rgb(56, 210, 66);
+        border-radius: 50%;
+        border-top: 10px solid white;
+        animation: loading 1.5s infinite linear;
+    }
+
+    
+}
+@keyframes loading {
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
